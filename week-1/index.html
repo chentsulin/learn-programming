@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Week 1 - Learning Programming</title>
+
+		<meta name="description" content="Learning Programming course Week 1">
+		<meta name="author" content="Chen-Tsu Lin">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Learning Programming</h1>
+					<h3>Week 1</h3>
+					<p>
+						<small>Programming Language / Network</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Hello~</h2>
+					<p>
+						雖然這樣的內容，對初學者或許不是很簡單，但了解一切背後的原理，寫 code 就不會那麼的難
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section data-background-size="1280px" data-background="img/level-1.png"></section>
+					<section data-background-size="1280px" data-background="img/level-2.png">
+					</section>
+					<section data-background-size="1280px" data-background="img/level-3.png">
+					</section>
+				</section>
+
+				<section>
+					<section data-background-size="1280px" data-background="img/compile-1.png"></section>
+					<section data-background-size="1280px" data-background="img/compile-2.png">
+					</section>
+				</section>
+<!--
+				<section>
+					<h2>Point of View</h2>
+					<p>
+						Press <strong>ESC</strong> to enter the slide overview.
+					</p>
+					<p>
+						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+					</p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Markdown support
+
+						Write content using inline or external Markdown.
+						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+						```
+						<section data-markdown>
+						  ## Markdown support
+
+						  Write content using inline or external Markdown.
+						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						</section>
+						```
+					</script>
+				</section>
+-->
+				<section>
+					<section>
+						<h2>常見誤解</h2>
+						<p class="fragment">A: 你擅長什麼程式語言？</p>
+						<p class="fragment">B: 我擅長 HTML、CSS</p>
+						<br>
+						<p class="fragment">這樣就會被發現不專業了...</p>
+					</section>
+					<section id="fragments">
+						<h2>HTML</h2>
+						<p>超文件標籤語言 (Hypertext Markup Language)</p>
+						<p class="fragment">它只是個標籤語言...</p>
+						<h2>CSS</h2>
+						<p>層疊樣式表 (Cascading Style Sheets)</p>
+						<p class="fragment">它只是個樣式語言...</p>
+					</section>
+					<section>
+						<h2>程式語言的定義</h2>
+						<p class="fragment">可以用這個語言模擬圖靈機 (Turing machine)，那這個語言就是圖靈完全 (Turing completeness)</p>
+						<p class="fragment">可以應付一切複雜計算</p>
+					</section>
+<!--
+					<section>
+						<h2>Fragment Styles</h2>
+						<p>There's different types of fragments, like:</p>
+						<p class="fragment grow">grow</p>
+						<p class="fragment shrink">shrink</p>
+						<p class="fragment fade-out">fade-out</p>
+						<p class="fragment current-visible">current-visible</p>
+						<p class="fragment highlight-red">highlight-red</p>
+						<p class="fragment highlight-blue">highlight-blue</p>
+					</section>
+-->
+				</section>
+				<section>
+					<section>
+						<h2>如何選擇程式語言？</h2>
+					</section>
+					<section>
+						<h2>有些時候是看領域的</h2>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>領域</th>
+									<th>語言</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>OS (作業系統)</td>
+									<td>C</td>
+								</tr>
+								<tr>
+									<td>Firmware (韌體)</td>
+									<td>C</td>
+								</tr>
+								<tr>
+									<td>iOS</td>
+									<td>Objective-C, Swift</td>
+								</tr>
+								<tr>
+									<td>Android</td>
+									<td>Java</td>
+								</tr>
+								<tr>
+									<td>Website Front-end (網頁前端)</td>
+									<td>JavaScript</td>
+								</tr>
+								<tr>
+									<td>Website Back-end (網頁後端)</td>
+									<td>Any One</td>
+								</tr>
+								<tr>
+									<td>Machine Learning (機器學習)</td>
+									<td>Python, R</td>
+								</tr>
+								<tr>
+									<td>Statistics (統計)</td>
+									<td>R</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h2 style="margin-top: 100px">這一系列的主軸會是</h2>
+						<h1 class="fragment" style="color: blue">JavaScript</p>
+					</section>
+					<section>
+						<h2>JavaScript 橫跨各平台</h2>
+						<ul>
+							<li>Website Frontend & Backend</li>
+							<li>Mobile App</li>
+							<li>Desktop App</li>
+							<li>Hardware Control</li>
+							<li>幾乎大部份你想得到的事...</li>
+						</ul>
+					</section>
+					<section>
+						<h2>而且瀏覽器就可以執行！</h2>
+					</section>
+					<section>
+						<h2>現場示範一些沒有邏輯的 code</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Network</h2>
+					</section>
+					<section>
+						<h2>做網站的第一件事是<br>先簡單了解網路</h2>
+					</section>
+					<section>
+						<h2>LAN – Local Area Network</h2>
+						<ul>
+							<li>乙太網路 (Ethernet)</li>
+							<li>Wi-Fi</li>
+						</ul>
+					</section>
+					<section>
+						<img src="img/ethernet.jpg" style="position: relative; top: -80px">
+					</section>
+					<section>
+						<img src="img/wifi.png" style="position: relative; top: -50px">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>封包?!</h2>
+					</section>
+					<section>
+						<h2>由於無法一次傳完，拆成 10b ~ 幾 kb 的大小..</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>現實世界的網路模型</h2>
+					</section>
+					<section>
+						<img src="img/dod.gif" style="width: 1000px">
+					</section>
+					<section>
+						<h2>必須好好了解的是..<br>TCP/IP 跟建在其上面的 HTTP!</h2>
+					</section>
+					<section>
+						<h2>IP 就像是電腦的地址</h2>
+						<p>是由 4 個 0~255 的數字組成的，稱為 IPv4</p>
+						<p>例如：140.112.0.159</p>
+					</section>
+					<section>
+						<h2>有些特定的 IP：</h2>
+						<p>127.0.0.1 指向自己電腦</p>
+						<p>10.x.x.x、192.168.x.x 是區域網路 IP</p>
+					</section>
+					<section>
+						<h2>訊息是怎麼正確傳到正確地址？</h2>
+						<p class="fragment">就像轉公文一樣</p>
+						<p class="fragment">海外->台灣->教育部->台大->學務處</p>
+					</section>
+					<section>
+						<h2>崩潰...地址背不起來</h2>
+					</section>
+					<section>
+						<h2>所以有了 DNS (Domain Name System) 也就是 網域名稱系統</h2>
+						<ul>
+							<li>www.facebook.com</li>
+							<li>www.google.com</li>
+							<li>www.twitter.com</li>
+						</ul>
+					</section>
+					<section>
+						<h2>台大就可以直接轉到羅斯福路四段，以後換地址也不怕寄錯</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>除了 IP 還有什麼？！</h2>
+					</section>
+					<section>
+						<h2>每部電腦都有 65536 個洞...</h2>
+						<br>
+						<p class="fragment">不對...是 port</p>
+					</section>
+					<section>
+						<h2>一台電腦要連接令一台電腦一定要有 IP 跟 port</h2>
+						<br>
+						<p>例如：254.166.2.177:80</p>
+						<br>
+						<p>254.166.2.177 就是 IP</p>
+						<p>80 就是 port</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>終於..可以講講瀏覽器的運作方式</h2>
+					</section>
+					<section>
+						<h2>1. 打開瀏覽器輸入網址</h2>
+						<p>如果只有 IP 或網址而沒有給 port</p>
+						<p>HTTP 的預設 port 是 80</p>
+						<p>HTTPS 的預設 port 是 443</p>
+					</section>
+					<section>
+						<h2>2.查詢 DNS</h2>
+						<p>首先會先看過 hosts 檔</p>
+						<p>再來看看有沒有之前暫存的查詢記錄</p>
+						<p>都沒有才發出請求去問 DNS Server</p>
+					</section>
+					<section>
+						<h2>3.往目標 IP 發封包</h2>
+						<p>經過一個個的 Router</p>
+						<p>最後到達目的</p>
+						<p>TCP 的協定下要是有掉封包會重傳</p>
+					</section>
+					<section>
+						<h2>4.到達目標 IP 所在那台電腦</h2>
+						<p>找到他對應的 port 跟他接通</p>
+						<p>並把那台腦要傳回來的資料反向發送</p>
+						<p>如果是一般的網頁這時就發 HTML 回去</p>
+					</section>
+					<section>
+						<h2>5.藉由一樣的機制再回到原來發送的電腦</h2>
+						<p>把東西顯示在畫面上</p>
+						<p>例如顯示 HTML</p>
+					</section>
+				</section>
+
+				<section>
+					<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+						<h2 style="color: white">所以前端跟後端的差別是？</h2>
+					</section>
+					<section data-background="#4d7e65">
+						<h2 style="color: white">前端</h2>
+						<br>
+						<p class="fragment" style="color: white">在使用者瀏覽器跑的程式就是前端</p>
+						<br>
+						<h2 style="color: white">後端</h2>
+						<br>
+						<p class="fragment" style="color: white">在伺服器電腦跑的程式就是後端</p>
+					</section>
+				</section>
+<!--
+				<section id="transitions">
+					<h2>Transition Styles</h2>
+					<p>
+						You can select from different transitions, like: <br>
+						<a href="?transition=none#/transitions">None</a> -
+						<a href="?transition=fade#/transitions">Fade</a> -
+						<a href="?transition=slide#/transitions">Slide</a> -
+						<a href="?transition=convex#/transitions">Convex</a> -
+						<a href="?transition=concave#/transitions">Concave</a> -
+						<a href="?transition=zoom#/transitions">Zoom</a>
+					</p>
+				</section>
+
+				<section id="themes">
+					<h2>Themes</h2>
+					<p>
+						reveal.js comes with a few themes built in: <br>
+						 Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck.
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+					</p>
+				</section>
+-->
+<!--
+				<section>
+					<section data-background="#dddddd">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+						<h2>Image Backgrounds</h2>
+						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+						<h2>Tiled Backgrounds</h2>
+						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					</section>
+					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h2>Video Backgrounds</h2>
+							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						</div>
+					</section>
+					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+						<h2>... and GIFs!</h2>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
+					</p>
+					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						You can override background transitions per-slide.
+					</p>
+					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				</section>
+
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+
+				<section>
+					<h2>Marvelous List</h2>
+					<ul>
+						<li>No order here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Fantastic Ordered List</h2>
+					<ol>
+						<li>One is smaller than...</li>
+						<li>Two is smaller than...</li>
+						<li>Three!</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Tabular Tables</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Value</th>
+								<th>Quantity</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Apples</td>
+								<td>$1</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>Lemonade</td>
+								<td>$2</td>
+								<td>18</td>
+							</tr>
+							<tr>
+								<td>Bread</td>
+								<td>$3</td>
+								<td>2</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>Clever Quotes</h2>
+					<p>
+						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+					</p>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Intergalactic Interconnections</h2>
+					<p>
+						You can link between slides internally,
+						<a href="#/2/3">like this</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Speaker View</h2>
+					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+					<p>Press the <em>S</em> key to try it out.</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+				</section>
+
+				<section>
+					<h2>Global State</h2>
+					<p>
+						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+						will be added as a class to the document element when the slide is open. This lets you
+						apply broader style changes, like switching the page background.
+					</p>
+				</section>
+
+				<section data-state="customevent">
+					<h2>State Events</h2>
+					<p>
+						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+					</p>
+					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+				</section>
+-->
+<!--
+				<section>
+					<h2>Take a Moment</h2>
+					<p>
+						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+					</p>
+				</section>
+
+				<section>
+					<h2>Much more</h2>
+					<ul>
+						<li>Right-to-left support</li>
+						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+					</ul>
+				</section>
+-->
+				<section style="text-align: left;">
+					<h1>許願池</h1>
+					<ol>
+						<li>有人說想學瀑布流</li>
+						<li>有人說想學怎麼跟工程師溝通</li>
+						<li>有人說想學 layout 要怎麼擺</li>
+					</ol>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- Thanks for Listening
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
