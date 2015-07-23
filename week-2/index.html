@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Week 2 - Learning Programming</title>
+
+		<meta name="description" content="Learning Programming course Week 2">
+		<meta name="author" content="Chen-Tsu Lin">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Learning Programming</h1>
+					<h3>Week 2</h3>
+					<p>
+						<small>HTML / CSS / JS</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>稍微複習一下上禮拜的內容</h2>
+					<p>
+						還記得網路是怎麼運作的嗎...
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>先簡單地瞄過一下..</h2>
+					</section>
+					<section>
+						<h2>HTML..</h2>
+						<img src="img/html.png">
+					</section>
+					<section>
+						<h2>CSS..</h2>
+						<img src="img/css.png">
+					</section>
+					<section>
+						<h2>JS..</h2>
+						<img src="img/js.png">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>就是寫一些 .html, .css, .js 檔啊，不然要幹麻</h2>
+					</section>
+					<section>
+						<h2>等等，什麼是副檔名<br> (Filename Extension)？</h2>
+					</section>
+					<section>
+						<h2>例如：example.txt</h2>
+						<p class="fragment">txt 就是副檔名，早期用來標示檔案類型</p>
+					</section>
+					<section>
+						<h2>但這造成許多安全缺陷</h2>
+						<p class="fragment">例如：修改副檔名，或甚至在作業系統隱藏副檔名的狀況下，把 example.txt.exe 偽裝成 example.txt</p>
+					</section>
+					<section>
+						<h2>副檔名最大作用</h2>
+						<p class="fragment">讓系統決定用什麼程式打開</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>前端的專業分工</h2>
+					</section>
+					<section data-background="img/responsibility.png">
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">HTML 在畫面上放上按鈕</li>
+							<li class="fragment">CSS 決定按鈕長什麼樣子</li>
+							<li class="fragment">JS 控制按按鈕後的行為</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>HTML</h2>
+					</section>
+					<section>
+						<h2>文件類型 (doctype)</h2>
+						<div class="fragment">
+							<p>請一律使用</p>
+							<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+						</div>
+						<br>
+						<div class="fragment">
+							<p>不要使用那些跟這個長很像的</p>
+							<pre><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;
+	&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code></pre>
+						</div>
+					</section>
+					<section>
+						<h2>標籤 (tag)</h2>
+						<div class="fragment">
+							<p>長這樣的就是標籤</p>
+							<pre><code>&lt;xxx&gt;&lt;/xxx&gt;</code></pre>
+						</div>
+						<div class="fragment">
+							<p>有的需要關起來 (close)</p>
+							<pre><code>&lt;xxx&gt;&lt;/xxx&gt;</code></pre>
+						</div>
+						<div class="fragment">
+							<p>有的則不用</p>
+							<pre><code>&lt;xxx&gt;</code></pre>
+						</div>
+					</section>
+					<section>
+						<h2>屬性 (attribute)</h2>
+						<div class="fragment">
+							<p>標籤上面有些標示，就是屬性</p>
+							<pre><code>&lt;input type=&quot;button&quot; name=&quot;abutton&quot;&gt;</code></pre>
+							<p class="fragment">例如上面的 <code>type</code> 跟 <code>name</code></p>
+						</div>
+					</section>
+					<section>
+						<h2>標籤萬萬種</h2>
+						<p>比較會用到的是這些</p>
+						<p class="fragment"><code>&lt;html&gt;, &lt;body&gt;, &lt;head&gt;, &lt;title&gt;, &lt;link&gt;, &lt;script&gt;, &lt;style&gt;, &lt;a&gt;, &lt;br&gt;, &lt;button&gt;, &lt;canvas&gt;, &lt;div&gt;, &lt;h1&gt; ~ &lt;h6&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;img&gt;, &lt;input&gt;, &lt;p&gt;, &lt;span&gt;, &lt;textarea&gt;, &lt;iframe&gt;</code></p>
+					</section>
+					<section>
+						<h2>標準結構是這樣</h2>
+						<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+						</code></pre>
+					</section>
+					<section>
+						<ul>
+							<li>一定要有 doctype</li>
+							<li>一定要有 html tag</li>
+							<li>html tag 裡面一定要有 head, body</li>
+							<li>head 是一些額外的資訊</li>
+							<li>body 是放主要內容</li>
+						</ul>
+					</section>
+					<section>
+						<h2> 常有些什麼資訊？</h2>
+					</section>
+					<section>
+						<img src="img/tab.png">
+						<pre><code>&lt;title&gt;&#21021;&#23416;&#32773;&#20808;&#26371;&#36889;&#20491;&#23601;&#36942;&#24471;&#21435;&#20102;&lt;/title&gt;</code></pre>
+					</section>
+					<section>
+						<img src="img/search.png">
+						<a href="https://support.google.com/webmasters/answer/79812?hl=en" target="_blank">詳細可看 google 現身說法</a>
+					</section>
+					<section>
+						<img src="img/share.png">
+						<a href="http://ogp.me/" target="_blank">詳細可看 fb 現身說法</a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>a (anchor)</h2>
+						<pre><code>
+&lt;a href=&quot;//www.google.com&quot; target=&quot;_blank&quot;&gt;&#36889;&#26159;&#20491;&#36229;&#36899;&#32080;&lt;/a&gt;
+&lt;a href=&quot;/week-1&quot;&gt;&#36899;&#21040; week-1&lt;/a&gt;
+						</code></pre>
+						<a href="//www.google.com" target="_blank">這是個超連結</a>
+						<a href="/week-1">連到 week-1</a>
+					</section>
+					<section>
+						<h2>img (image)</h2>
+						<pre><code>
+&lt;img src=&quot;img/logo-ruby.png&quot;&gt;
+						</code></pre>
+						<img src="img/logo-ruby.png">
+					</section>
+					<section>
+						<h2>iframe</h2>
+						<pre><code>
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot;
+        src=&quot;https://www.youtube.com/embed/Eso_PkuYlB4?list=RDxy-BqLWpoQM&quot;
+        frameborder=&quot;0&quot; allowfullscreen&gt;
+&lt;/iframe&gt;
+						</code></pre>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/6dwbkrAKpvY?list=RDxy-BqLWpoQM" frameborder="0" allowfullscreen></iframe>
+					</section>
+					<section>
+						<h2>h1 ~ h6 (heading)</h2>
+						<pre><code>&lt;h1&gt;h1&lt;/h1&gt;
+&lt;h2&gt;h2&lt;/h2&gt;
+&lt;h3&gt;h3&lt;/h3&gt;
+&lt;h4&gt;h4&lt;/h4&gt;</code></pre>
+						<h1>h1</h1>
+						<h2>h2</h2>
+						<h3>h3</h3>
+						<h4>h4</h4>
+					</section>
+					<section>
+						<h2>p (paragraph)</h2>
+						<pre><code>
+&lt;p&gt;&#27573;&#33853;&#19968;&lt;/p&gt;
+&lt;p&gt;&#27573;&#33853;&#20108;&lt;/p&gt;
+						</code></pre>
+						<p>段落一</p>
+						<p>段落二</p>
+					</section>
+					<section>
+						<h2>br (break)</h2>
+						<pre><code>
+&lt;p&gt;&#26039;&lt;br&gt;&#34892;&#25033;&lt;br&gt;&#35442;&#26039;&#22909;&lt;br&gt;&#30340;&#20301;&#32622;&lt;/p&gt;
+						</code></pre>
+						<p>斷<br>行應<br>該斷好<br>的位置</p>
+					</section>
+					<section>
+						<h2>input</h2>
+						<pre><code>
+&lt;input type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;&#35531;&#36664;&#20837;&#24115;&#34399;&quot;&gt;
+&lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;&#35531;&#36664;&#20837;&#23494;&#30908;&quot;&gt;
+						</code></pre>
+<input type="text" name="username" placeholder="請輸入帳號">
+<input type="password" name="password" placeholder="請輸入密碼">
+					</section>
+					<section>
+						<h2>button</h2>
+						<pre><code>
+&lt;button&gt;&#25353;&#25105;&lt;/button&gt;
+						</code></pre>
+						<button>按我</button>
+					</section>
+					<section>
+						<h2>textarea</h2>
+						<pre><code>
+&lt;textarea&gt;&#36889;&#26159;&#20491;&#36664;&#20837;&#21312;&#22602;&lt;/textarea&gt;
+						</code></pre>
+						<textarea>這是個輸入區塊</textarea>
+					</section>
+					<section>
+						<h2>ol (ordered list)</h2>
+						<pre><code>&lt;ol&gt;
+	&lt;li&gt;&#27493;&#39519;&#19968;&lt;/li&gt;
+	&lt;li&gt;&#27493;&#39519;&#20108;&lt;/li&gt;
+	&lt;li&gt;&#27493;&#39519;&#19977;&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+<ol>
+	<li>步驟一</li>
+	<li>步驟二</li>
+	<li>步驟三</li>
+</ol>
+					</section>
+					<section>
+						<h2>ul (unordered list)</h2>
+						<pre><code>&lt;ul&gt;
+	&lt;li&gt;&#28165;&#21934;&#19968;&lt;/li&gt;
+	&lt;li&gt;&#28165;&#21934;&#20108;&lt;/li&gt;
+	&lt;li&gt;&#28165;&#21934;&#19977;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<ul>
+	<li>清單一</li>
+	<li>清單二</li>
+	<li>清單三</li>
+</ul>
+					</section>
+					<section>
+						<h2>div (division)</h2>
+						<pre><code>&lt;div&gt;
+	&lt;h2&gt;&#27161;&#38988;&lt;/h2&gt;
+	&lt;p&gt;&#20839;&#25991;.....&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+						<div>
+							<h2>標題</h2>
+							<p>內文.....</p>
+						</div>
+					</section>
+					<section>
+						<h2>span</h2>
+						<pre><code>&lt;span&gt;&#22826;&#31354;&#26797;&#12289;&#28779;&#36554;&lt;/span&gt;
+&lt;span&gt;&#37327;&#23376;&#21147;&#23416;&#12289;&#26143;&#38555;&#25928;&#25033;&lt;/span&gt;</code></pre>
+						<span>太空梭、火車</span>
+						<span>量子力學、星際效應</span>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>為什麼 HTML 也蠻重要的？</h2>
+						<p class="fragment">google 等搜尋引擎的網路爬蟲 (Crawler)，就是拿到網頁的 HTML 做分析</p>
+					</section>
+					<section>
+						<h2>了解 HTML 有助於 SEO</h2>
+						<p class="fragment">搜尋引擎最佳化（Search Engine Optimization，簡稱SEO），也就是讓搜尋排名往前的手段</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>CSS 的多種 import 方式</h2>
+					</section>
+					<section>
+						<h2>直接給 html 標籤 style <br>(inline-style)</h2>
+						<pre><code>
+&lt;div style=&quot;color: red; background-color: #D8756E; font-size: 80px;&quot;&gt;
+yo&lt;/div&gt;
+						</code></pre>
+						<div style="color: red; background-color: #D8756E; font-size: 80px;">yo</div>
+						<p class="fragment">如果沒有特別的手段千萬別這樣做...</p>
+						<p class="fragment">以後會完全亂成一團...</p>
+					</section>
+					<section>
+						<h2>嵌入 style 區塊 (style block)</h2>
+						<pre><code>
+&lt;style&gt;
+h1 {
+  color: red;
+}
+&lt;/style&gt;
+						</code></pre>
+						<p class="fragment">只有首頁比較常見：樣式比較快呈現</p>
+					</section>
+					<section>
+						<h2>寫在另一個 CSS 檔案再匯入</h2>
+						<pre><code>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+						</code></pre>
+						<p class="fragment">這才是主流作法</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>剛剛的 css 在幹麻...</h2>
+						<pre><code>
+h1 {
+  color: red;
+}
+						</code></pre>
+						<p class="fragment">把 h1 tag 改成紅色</p>
+					</section>
+					<section>
+						<h2>這就是 CSS 定位目標的方式</h2>
+						<p>稱為選擇器 (selector)</p>
+					</section>
+
+					<section>
+						<h2>剛剛看到的是 tag selector</h2>
+						<p>用法：</p>
+						<pre><code>
+標籤名稱 {
+  樣式屬性: 樣式值;
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>又來了，千萬別亂用 <br>tag selector....</h2>
+						<p class="fragment">一改很可能就改到網站上其他東西</p>
+						<p class="fragment">還有幾個比 tag selector 重要一百倍的</p>
+					</section>
+
+					<section>
+						<h2>class selector</h2>
+						<pre><code>&lt;h1 class=&quot;article-heading&quot;&gt;&#27161;&#38988;&lt;/h1&gt;
+
+搭配
+
+.article-heading {
+  color: red;
+}
+
+.名稱 {
+  樣式屬性: 樣式值;
+}</code></pre>
+					</section>
+
+					<section>
+						<h2>id selector</h2>
+						<pre><code>&lt;h1 id=&quot;first-heading&quot;&gt;&#27161;&#38988;&lt;/h1&gt;
+
+搭配
+
+#first-heading {
+  color: red;
+}
+
+#名稱 {
+  樣式屬性: 樣式值;
+}</code></pre>
+					</section>
+
+					<section>
+						<h2>可以一路使用好幾個選擇器</h2>
+						<pre><code>.article .title {
+  color: red;
+}
+
+會應用到
+
+&lt;div class=&quot;article&quot;&gt;
+  &lt;h2 class=&quot;title&quot;&gt;&#25991;&#31456;&#27161;&#38988;&lt;/h2&gt;
+  &lt;p&gt;....&lt;/p&gt;
+&lt;/div&gt;
+
+的文章標題
+</code></pre>
+					</section>
+
+					<section>
+						<h2>還有好多好多選擇器</h2>
+						<p>今天先不教</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>因為要循序漸進，今天不會教 css 最難的排版</h2>
+					</section>
+					<section>
+						<h2>不過還是需要先知道<br>行內元素與區塊元素的差別</h2>
+					</section>
+					<section>
+						<h2>區塊元素 (block)</h2>
+						<p>代表結構的東西都是區塊元素</p>
+						<code>h1 ~ h6, p, br, div, ul, ol, form...</code>
+					</section>
+					<section>
+						<h2>行內元素 (inline)</h2>
+						<p>其他不是結構的通常都是行內元素</p>
+						<code>a, img, span</code>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>CSS 基本屬性</h2>
+						<p class="fragment">css 的屬性好多，多到有一些我也不會，不過那些大多不重要..</p>
+					</section>
+					<section>
+						<h2>長寬</h2>
+						<ul>
+							<li>width</li>
+							<li>height</li>
+							<li>min-width</li>
+							<li>min-height</li>
+							<li>max-width</li>
+							<li>max-height</li>
+						</ul>
+					</section>
+					<section>
+						<h2>字型</h2>
+						<ul>
+							<li>color</li>
+							<li>font-size</li>
+							<li>line-height</li>
+						</ul>
+					</section>
+					<section>
+						<h2>背景</h2>
+						<ul>
+							<li>background-color</li>
+							<li>background-image</li>
+						</ul>
+					</section>
+					<section>
+						<img src="img/box-model.gif">
+					</section>
+					<section>
+						<h2>border</h2>
+						<ul>
+							<li>border: 3px solid #000;</li>
+						</ul>
+					</section>
+					<section>
+						<h2>margin</h2>
+						<ul>
+							<li>margin: 20px 15px 10px 5px;</li>
+						</ul>
+					</section>
+					<section>
+						<h2>padding</h2>
+						<ul>
+							<li>padding: 5px 10px 15px 20px;</li>
+						</ul>
+					</section>
+					<section>
+						<h2>margin, padding 口訣：上右下左</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>那 #ff0101 是怎麼回事？</h2>
+						<div class="fragment">
+							<h4> 16 進位 RGB</h4>
+							<p>R:255, G: 1, B: 1</p>
+						</div>
+						<div class="fragment">
+							<h4> 2 進位...</h4>
+							<p>R:11111111 G:00000001 B:00000001</p>
+						</div>
+					</section>
+					<section>
+						<h2>簡單說就是像素的顏色</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>CSS reset</h2>
+					</section>
+					<section>
+						<h2>學了一些 CSS 入門後千萬不要直接衝動開始寫下去</h2>
+					</section>
+					<section>
+						<h2>不然你就會像我兩年前一樣後悔</h2>
+						<p class="fragment">怎麼到最後每個瀏覽器都長得不一樣...</p>
+						<p class="fragment">我應該要先 reset 的...</p>
+					</section>
+					<section>
+						<h2>normalize.css</h2>
+						<p class="fragment">https://necolas.github.io/normalize.css/</p>
+						<p class="fragment">css 世界最偉大的發明之一</p>
+					</section>
+				</section>
+
+
+<!--
+				<section>
+					<h2>Point of View</h2>
+					<p>
+						Press <strong>ESC</strong> to enter the slide overview.
+					</p>
+					<p>
+						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+					</p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Markdown support
+
+						Write content using inline or external Markdown.
+						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+						```
+						<section data-markdown>
+						  ## Markdown support
+
+						  Write content using inline or external Markdown.
+						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						</section>
+						```
+					</script>
+				</section>
+-->
+<!--
+					<section>
+						<h2>Fragment Styles</h2>
+						<p>There's different types of fragments, like:</p>
+						<p class="fragment grow">grow</p>
+						<p class="fragment shrink">shrink</p>
+						<p class="fragment fade-out">fade-out</p>
+						<p class="fragment current-visible">current-visible</p>
+						<p class="fragment highlight-red">highlight-red</p>
+						<p class="fragment highlight-blue">highlight-blue</p>
+					</section>
+-->
+
+				<section>
+					<section>
+						<h2>JavaScript</h2>
+					</section>
+					<section>
+						<h2>寫程式其實就是<br>一段操作數值的旅程</h2>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>型別</th>
+									<th>範例值</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Undefined (未定義)</td>
+									<td>undefined</td>
+								</tr>
+								<tr>
+									<td>Null (空值)</td>
+									<td>null</td>
+								</tr>
+								<tr>
+									<td>String (字串)</td>
+									<td>'哎，投影片做不完'</td>
+								</tr>
+								<tr>
+									<td>Boolean (布林值)</td>
+									<td>true, false</td>
+								</tr>
+								<tr>
+									<td>Number (數字)</td>
+									<td>3.1415926</td>
+								</tr>
+								<tr>
+									<td>Object (物件)</td>
+									<td>{ name: 'Tim', age: 21 }</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h2>所有的值被分成兩個陣營..</h2>
+						<p class="fragment">Truthy</p>
+						<p class="fragment">Falsy</p>
+					</section>
+					<section>
+						<h2>不是 Falsy 的值..<br>都是 Truthy (廢話)</h2>
+						<div class="fragment">
+							<p>Falsy 的值：</p>
+							<p>false, null, undefined, 0, NaN, ''</p>
+							<a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy" target="_blank">MDN</a>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>控制結構</h2>
+					</section>
+					<section>
+						<h2>if</h2>
+						<pre><code>if (條件) {
+  做一些事;
+}
+
+=>
+
+if (今天是禮拜四) {
+  來上課;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>if .. else</h2>
+						<pre><code>if (條件) {
+  做一些事;
+} else {
+  做另一件事;
+}
+
+=>
+
+if (今天是禮拜四) {
+  來上課;
+} else {
+  回家;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>三段變化，if .. else if ..</h2>
+						<pre><code>if (條件) {
+  做一些事;
+} else if (另一個條件) {
+  做另一件事;
+} else {
+  都不是才做這個;
+}
+
+=>
+
+if (今天是禮拜四) {
+  來上課;
+} else if (今天是禮拜五) {
+  去開趴;
+} else {
+  回家;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>for</h2>
+						<pre><code>for (初始化; 終止條件; 每趟結尾要做的事) {
+  做一些事;
+}
+
+=>
+
+for (盒子有十個餅乾; 沒有餅乾; 餅乾少一個) {
+  吃一個餅乾;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>while</h2>
+						<pre><code>while (終止條件) {
+  做一些事;
+}
+
+=>
+
+while (盒子裡還有餅乾) {
+  繼續吃;
+  盒子裡餅乾少一個;
+}
+						</code></pre>
+					</section>
+				</section>
+
+
+<!--
+				<section id="transitions">
+					<h2>Transition Styles</h2>
+					<p>
+						You can select from different transitions, like: <br>
+						<a href="?transition=none#/transitions">None</a> -
+						<a href="?transition=fade#/transitions">Fade</a> -
+						<a href="?transition=slide#/transitions">Slide</a> -
+						<a href="?transition=convex#/transitions">Convex</a> -
+						<a href="?transition=concave#/transitions">Concave</a> -
+						<a href="?transition=zoom#/transitions">Zoom</a>
+					</p>
+				</section>
+
+				<section id="themes">
+					<h2>Themes</h2>
+					<p>
+						reveal.js comes with a few themes built in: <br>
+						 Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck.
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+					</p>
+				</section>
+-->
+<!--
+				<section>
+					<h2>Take a Moment</h2>
+					<p>
+						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+					</p>
+				</section>
+
+-->
+				<section style="text-align: left;">
+					<h1>強化你的工具</h1>
+					<p>安裝 Sublime plugin</p>
+					<p><a href="https://packagecontrol.io/installation">Package Control</a></p>
+					<p><a href="https://chentsu.wordpress.com/2014/01/09/sublime-text-2-plugins-%E5%A5%BD%E7%94%A8%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/">我很久以前的部落格文...</a></p>
+					<ol>
+						<li>Bracket Highlighter</li>
+						<li>SideBarEnhancements</li>
+						<li>ColorHighlighter</li>
+					</ol>
+					<ol>
+						<li>Emmet</li>
+						<li>Hayaku</li>
+						<li>Tag</li>
+					</ol>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- Thanks for Listening
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
