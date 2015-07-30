@@ -1,0 +1,51 @@
+body {
+	margin: 0;
+}
+
+.heading {
+	width: 100%;
+	border-bottom: 1px solid #999;
+	text-align: center;
+	font-size: 16px;
+	height: 30px;
+	line-height: 18px;
+}
+
+.tab-bar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	border-top: 1px solid #999;
+}
+
+.tab-bar .tab {
+	display: inline-block;
+	width: 33%;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+}
+
+.tab-bar .tab.is-active {
+	color: #ff0807;
+}
+
+.hidden {
+	display: none;
+}
+
+.btn-circle {
+	width: 80px;
+	height: 80px;
+	border: 1px solid #999;
+	background-color: white;
+	border-radius: 100%;
+	font-size: 20px;
+}
+
+.display {
+	height: 200px;
+	border-bottom: 1px solid #999;
+	padding-top: 30px;
+}

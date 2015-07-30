@@ -1,0 +1,34 @@
+.timers {
+	width: 380px;
+	margin: 0 auto;
+}
+
+.main-timer {
+	font-size: 100px;
+}
+
+.second-timer {
+	text-align: right;
+	font-size: 26px;
+	color: #999;
+	position: relative;
+	top: -10px;
+}
+
+.stopwatch-control {
+	border-bottom: 1px solid #999;
+}
+
+
+.btn-right {
+	position: absolute;
+	right: 0;
+}
+
+.btn-group {
+	position: relative;
+	padding-top: 30px;
+	width: 60%;
+	margin: 0 auto;
+	height: 150px;
+}

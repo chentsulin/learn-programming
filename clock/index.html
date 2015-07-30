@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="clock.css">
+	<link rel="stylesheet" type="text/css" href="stopwatch.css">
+	<link rel="stylesheet" type="text/css" href="countdown.css">
+</head>
+<body>
+	<div class="container">
+		<h2 id="heading" class="heading">時鐘</h2>
+		<div id="clock" class="panel">
+			<div class="display clock-display">
+				<div class="timers">
+					<div id="now" class="main-timer">- - :- - .- -</div>
+				</div>
+			</div>
+		</div>
+		<div id="stopwatch" class="panel hidden">
+			<div class="display">
+				<div class="timers">
+					<div class="second-timer">00:00.00</div>
+					<div class="main-timer">00:00.00</div>
+				</div>
+			</div>
+			<div class="stopwatch-control">
+				<div class="btn-group">
+					<button class="btn-circle">開始</button>
+					<button class="btn-circle btn-right">分次</button>
+				</div>
+			</div>
+		</div>
+		<div id="countdown" class="panel hidden">
+
+		</div>
+	</div>
+	<div class="tab-bar">
+		<div class="tab tab-clock is-active">
+			時鐘
+		</div>
+		<div class="tab tab-stopwatch">
+			碼錶
+		</div>
+		<div class="tab tab-countdown">
+			計時器
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
