@@ -17,6 +17,7 @@
 
 .stopwatch-control {
 	border-bottom: 1px solid #999;
+	background-color: #f1f1f1;
 }
 
 
@@ -31,4 +32,18 @@
 	width: 60%;
 	margin: 0 auto;
 	height: 150px;
+}
+
+.btn-start {
+	color: #35d619;
+}
+
+.btn-stop {
+	color: red;
+}
+
+.btn-disabled {
+	color: grey;
+	background-color: #ccc;
+	corsor: not-allowed;
 }
