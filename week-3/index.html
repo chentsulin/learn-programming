@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Week 3 - Learning Programming</title>
+
+		<meta name="description" content="Week 3 - Learning Programming">
+		<meta name="author" content="C. T. Lin">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="#b5533c">
+					<h1>Learning Programming</h1>
+					<h3>Week 3</h3>
+					<p>
+						<small>CSS layout/JavaScript</small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>CSS Layout</h2>
+						<p>大家還記得行內元素 (inline) 與區塊元素 (block) 的差別、還有 Box Model 嗎？</p>
+					</section>
+					<section>
+						<h2>瀏覽器會依照 normal flow <br>來顯示 HTML 元素，<br>也就是上到下、左到右</h2>
+						<img src="img/flow.png" />
+					</section>
+					<section>
+						<p>但為了把東西排到自己想要的位置</p>
+						<p>就需要學習 layout 的技巧</p>
+					</section>
+					<section>
+						<p>因為 <a href="http://zh-tw.learnlayout.com/">Learn Layout</a> 這份教材寫得很好，就直接看他的就好</p>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h2>overflow</h2>
+					</section>
+					<section>
+						<p>overflow 有幾種屬性：</p>
+						<table>
+							<tbody>
+								<tr>
+									<td>visible</td>
+									<td>預設的，長度超過會超出框框</td>
+								</tr>
+								<tr>
+									<td>visible</td>
+									<td>長度超過會隱藏</td>
+								</tr>
+								<tr>
+									<td>scroll</td>
+									<td>不管怎樣都出現滾動軸</td>
+								</tr>
+								<tr>
+									<td>auto</td>
+									<td>長度超過會有滾動軸，反之沒有</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<p>overflow: visible</p>
+						<div style="border: 1px solid white; width: 500px">
+							MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+						</div>
+					</section>
+					<section>
+						<p>overflow: hidden</p>
+						<div style="border: 1px solid white; width: 500px; overflow: hidden">
+							MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+						</div>
+					</section>
+					<section>
+						<p>overflow: scroll</p>
+						<div style="border: 1px solid white; width: 500px; overflow: scroll">
+							MMMMMMMMMMMMMMMM
+						</div>
+						<br>
+						<div style="border: 1px solid white; width: 500px; overflow: scroll">
+							MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+						</div>
+					</section>
+					<section>
+						<p>overflow: auto</p>
+						<div style="border: 1px solid white; width: 500px; overflow: auto">
+							MMMMMMMMMMMMMMMM
+						</div>
+						<br>
+						<div style="border: 1px solid white; width: 500px; overflow: auto">
+							MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+						</div>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>重複幾個要點</h2>
+					</section>
+					<section>
+						<p>display</p>
+						<ul>
+							<li class="fragment">一般元素都是 inline 或 block</li>
+							<li class="fragment">display: none 看不見且不佔空間</li>
+							<li class="fragment">visibility: hidden 看不見但佔空間</li>
+						</ul>
+					</section>
+					<section>
+						<p>block</p>
+						<ul>
+							<li class="fragment">要置中必須設定長度並 margin: 0 auto;</li>
+							<li class="fragment">使用 max-width 取代 width 避免小螢幕出現滾動軸</li>
+						</ul>
+					</section>
+					<section>
+						<p>positon</p>
+						<ul>
+							<li class="fragment">一般 normal flow，所有元素都是 positon: static，上到下、左到右</li>
+							<li class="fragment"> positon: fixed，會固定在視窗的絕對定位</li>
+							<li class="fragment"> positon: relative，會依照 normal flow 位子相對調整</li>
+							<li class="fragment"> positon: absolute，會從 normal flow 移除，改為相對於上一層為非 static 的元素，如果都沒有則相對於 body</li>
+						</ul>
+					</section>
+					<section>
+						<p>float</p>
+						<ul>
+							<li class="fragment">後面的元素要 clear: left, clear: right 或 clear: both</li>
+							<li class="fragment">浮動的元素比容器還大時要 clearfix，把 overflow: auto</li>
+						</ul>
+					</section>
+					<section>
+						<p>inline-block</p>
+						<ul>
+							<li class="fragment">排多個元素時比 float 簡單許多</li>
+							<li class="fragment">可能需要 vertical-align: top 來對齊最上面</li>
+						</ul>
+					</section>
+					<section>
+						<p>比例調整技巧</p>
+						<ul>
+							<li class="fragment">用 % 數在很小的時候會很難看</li>
+							<li class="fragment">media query 可針對不同大小制定不同 layout</li>
+						</ul>
+					</section>
+					<section>
+						<p>先不教</p>
+						<ul>
+							<li class="fragment">flexbox 是未來很有潛力的做法</li>
+							<li class="fragment">z-index 是來處理誰要疊上面的屬性</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h2>JavaScript</h2>
+					</section>
+					<section>
+						<h2>載入方式</h2>
+					</section>
+					<section>
+						<p>直接把 script tag 嵌在 html</p>
+
+<pre><code>&lt;script&gt;
+	var a = 1;
+	//...
+&lt;/script&gt;</code></pre>
+						<p class="fragment">盡量不要這樣做...</p>
+					</section>
+
+					<section>
+						<p>從其他檔案匯入 html</p>
+
+<pre><code>&lt;script src=&quot;myJS.js&quot;&gt;&lt;/script&gt;</code></pre>
+					</section>
+				</section>
+
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>路徑</h2>
+						<p>路徑有分成相對路徑跟絕對路徑</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+用 / 開頭的就是絕對路徑
+
+```
+/usr/local
+/path/my-file.js
+```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+其他都是相對路徑，相對於現在位置
+
+```
+my-file.js -> 同一層
+./my-file.js -> 同一層
+../my-file.js -> 上一層
+js/my-file.js -> 同一層的 js 裡面
+```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+## windows 斜線跟別人不一樣要小心
+
+						</script>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h2>CDN</h2>
+						<p>內容傳遞網路（Content delivery network)</p>
+						<p>是指一種透過網際網路互相連接的電腦網路系統，提供高效能、可擴展性、及低成本的網路將內容傳遞給使用</p>
+					</section>
+					<section>
+						<p>優點</p>
+						<ol>
+							<li>傳輸量會受頻寬影響，所以內容傳遞網路的總承載量可以比單一骨幹大</li>
+							<li>找就近的節點傳輸，紐約雪梨光纖來回也要 0.16 秒</li>
+							<li>快取 cache</li>
+							<li>異地備援</li>
+						</ol>
+					</section>
+					<section>
+<p>例如使用 jQuery 的 CDN</p>
+
+<pre><code>&lt;script src=&quot;https://code.jquery.com/jquery-1.11.3.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>Function</h2>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+用 function 關鍵字就可以宣告
+
+```
+function myFunc(arg1, arg2, arg3) {
+	// ...
+	return returnValue;
+}
+```
+
+名稱後面的 () 可以傳 0 ~ n 個參數進去 function
+
+function 會執行到 return 回傳值的時候結束，沒有 return 則會跑到最後一行，並 return undefined
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+宣告以後就可以重複使用
+
+```
+var value1 = myFunc(1, 2, 3);
+var value2 = myFunc(2, 1, 3);
+var value3 = myFunc(3, 2, 1);
+```
+						</script>
+					</section>
+					<section>
+						<p>這樣你可以把一些重複邏輯收集起來寫成可以彈性的運作</p>
+						<p>例如發牌給不同數量的人</p>
+						<p>dealCards(3)</p>
+						<p>dealCards(4)</p>
+						<p>dealCards(5)</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+function也是一種值，可以把 function 指定給變數
+
+```
+var myFunc = function(a, b) {
+	//...
+};
+```
+
+function 本身可以當作 function 的參數或是回傳值，
+
+來處理很多複雜的邏輯
+
+
+```
+var myOtherFunc = function(a, func) {
+	//...
+	var b = 2;
+	func(a, b);
+};
+
+myOtherFunc(1, myFunc);
+```
+						</script>
+					</section>
+				</section>
+
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<p>Plain Object</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+純粹只用大括號來構成的物件 (object)：
+
+在物件上的 function 稱為方法 (method)，通常有取得 this 也就是物件自己的能力
+
+```
+var marshall = {
+	name: 'marshall',
+	gender: 'male',
+	sayName: function() {
+		console.log(this.name);
+	}
+};
+
+marshall.sayName();
+```
+						</script>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>DOM</h2>
+						<p>文件物件模型 (Document Object Model, DOM)</p>
+						<p>它提供了一個文件（樹）的結構化表示法，並定義讓程式可以存取並改變文件架構、風格和內容的方法。</p>
+						<p>本身不是 JavaScript 的一部分，是瀏覽器環境提供的</p>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<p>jQuery</p>
+						<p>10 年歷史的 js library</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+通常會用 $ 代替 jQuery，算是別名 (alias)，$ === jQuery
+
+$(selector) 可以用跟 css 一樣的選擇去選取 DOM，<br>轉換成 jQuery Object
+
+```
+$('#id'), $('.class'), $('div')
+```
+
+...等等
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+因為必須等畫面中的 DOM 準備好才可以開始操作，所以大部份程式都要包在這個裡面
+
+```
+$(document).ready(function() {
+	// ready to go..
+});
+```
+						</script>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65" style="text-align: left;">
+					<h1>THE END</h1>
+					<p>Thanks for listening</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
