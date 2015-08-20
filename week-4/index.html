@@ -51,7 +51,7 @@
 				<section data-transition="slide" data-background="#4d7e65">
 					<section>
 						<h2>library</h2>
-						<p>library (函式庫)，就是一些可以向其他程式提供服務的程式碼</p>
+						<p>library (函式庫)，<br>就是一些可以向其他程式提供服務的程式碼</p>
 					</section>
 					<section>
 						<h2>程式的領域有一句很有名的話：</h2>
@@ -63,9 +63,66 @@
 						<p>盡量把一些自己常用到的程式寫成 library</p>
 					</section>
 					<section>
-						<p>雖然 jQuery 在軟體工程上的一些缺點，<br>跟近年來技術典範轉移，jQuery 的重要性正在減低。</p>
+						<p>雖然 jQuery 在軟體工程上有一些缺點，<br>跟近年來技術典範轉移，jQuery 的重要性正在減低。</p>
 						<br>
 						<p>但因為他可以相當快入門，<br>以及這近十年至今對相當多網站的影響，<br>還是很值得學習。</p>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h2>jQuery</h2>
+					</section>
+					<section>
+						<p>包含 DOM 操作和一些 helper function</p>
+						<p class="fragment">之前的 js 都還跟網頁畫面無關，現在要來加上一點互動</p>
+					</section>
+					<section>
+						<p>DOM 操作的部分</p>
+						<ul>
+							<li>Selectors (選擇器)</li>
+							<li>Traversing (遍歷)</li>
+							<li>Manipulation (操作)</li>
+							<li>Events (事件)</li>
+							<li>Effects (動畫效果)</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>使用 CDN 載入</h2>
+					</section>
+					<section>
+						<p>JavaScript 的載入有順序性</p>
+						<p>先用到的必須放前面</p>
+					</section>
+					<section>
+						<p>JavaScript 通常放在 body 最後面</p>
+						<p>避免延後畫面出來的時間</p>
+					</section>
+					<section>
+							<p>在自己網站上載入：</p>
+
+<pre><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+想在別人的網站上測試的話，這樣載入：
+
+```
+var script = document.createElement('script');
+script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js';
+document.body.appendChild(script);
+```
+						</script>
+					</section>
+					<section>
+						<h2>v1.x 跟 v2.x 的差別</h2>
+						<p>v1.x 支援到 ie6 以上</p>
+						<p>v2.x 支援到 ie9 以上</p>
 					</section>
 				</section>
 
@@ -88,17 +145,45 @@
 					</section>
 				</section>
 
+
 				<section data-transition="slide" data-background="#4d7e65">
 					<section>
 						<h2>Selectors</h2>
 					</section>
-					<section data-markdown>
-						<script type="text/template">
+					<section>
+							<p>id selector</p>
+<pre><code>// html
+&lt;div id=&quot;this-one&quot;&gt;&lt;/div&gt;
 
-```
+// js
+$('#this-one')
+</code></pre>
+					</section>
+					<section>
+							<p>class selector</p>
+<pre><code>// html
+&lt;div class=&quot;those&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;those&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;those&quot;&gt;&lt;/div&gt;
 
-```
-						</script>
+// js
+$('.those')
+</code></pre>
+					</section>
+					<section>
+							<p>tag selector</p>
+<pre><code>// html
+&lt;div class=&quot;those&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;those&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;those&quot;&gt;&lt;/div&gt;
+
+// js
+$('div')
+</code></pre>
+					</section>
+					<section>
+							<p>還有很多種 selector，不過跟 css 一樣先不教</p>
+							<a href="http://api.jquery.com/category/selectors/">可以參考這裡</a>
 					</section>
 				</section>
 
@@ -106,24 +191,495 @@
 					<section>
 						<h2>jQuery Object</h2>
 					</section>
+					<section>
+						<p>$ 這個 function 回傳的都是 jQuery Object</p>
+						<p class="fragment">它是個像是 array 但又不是 array 的東西</p>
+						<p class="fragment">底下代表的是 selector 選取到的 0 個, 1 個或多個東西</p>
+					</section>
+					<section>
+							<p>沒選到東西時</p>
+<pre><code>
+// js
+var noThisOne = $('.no-this-one');
+noThisOne.length // 0
+noThisOne[0] // undefined
+</code></pre>
+					</section>
+					<section>
+							<p>選到 1 個東西時</p>
+<pre><code>// html
+&lt;div class=&quot;only-one&quot;&gt;&lt;/div&gt;
+// js
+var onlyOne = $('.only-one');
+noThisOne.length // 1
+noThisOne[0] // 選到的第一個 DOM 物件
+</code></pre>
+					</section>
+					<section>
+							<p>選到 1 個以上的東西時</p>
+<pre><code>// html
+&lt;div class=&quot;not-only-one&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;not-only-one&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;not-only-one&quot;&gt;&lt;/div&gt;
+// js
+var notOnlyOne = $('.not-only-one');
+notOnlyOne.length // 3
+notOnlyOne[0] // 選到的第一個 DOM 物件
+notOnlyOne[1] // 選到的第二個 DOM 物件
+notOnlyOne[2] // 選到的第三個 DOM 物件
+</code></pre>
+					</section>
+					<section>
+						<p>可以看到他跟 array 有一些相似的地方</p>
+					</section>
+					<section>
+						<p>而用 $ 變成 jQuery object 後就會有後面要講的那些超能力</p>
+					</section>
 				</section>
 
 
 				<section data-transition="slide" data-background="#4d7e65">
 					<section>
 						<h2>Traversing</h2>
+						<p>處理樹狀圖的位置關係、過濾</p>
+					</section>
+					<section>
+							<p>.children()</p>
+							<p>取得他的下一層</p>
+<pre><code>// html
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var wrapper = $('.wrapper');
+wrapper.children().length; // 3
+</code></pre>
+					</section>
+					<section>
+							<p>.children(selector)</p>
+							<p>取得他的下一層符合條件的</p>
+<pre><code>// html
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;not-target&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var wrapper = $('.wrapper');
+wrapper.children('.target').length; // 2
+</code></pre>
+					</section>
+					<section>
+							<p>.parent()</p>
+							<p>取得他的上一層</p>
+<pre><code>// html
+&lt;div class=&quot;target&quot;&gt;
+	&lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var inner = $('.inner');
+var parent = inner.parent()
+parent.length // 1
+parent.attr('class'); // target
+</code></pre>
+					</section>
+					<section>
+							<p>.siblings()</p>
+							<p>取得他的同一層其他人不包括自己</p>
+<pre><code>// html
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div class=&quot;selector&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var selector = $('.selector');
+var siblings = selector.siblings()
+siblings.length // 2
+</code></pre>
+					</section>
+					<section>
+							<p>.find(selector)</p>
+							<p>取得他的裡面任何一個符合條件的</p>
+<pre><code>// html
+&lt;div class=&quot;wrapper&quot;&gt;
+	<div>
+		&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+		<div>
+			&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+		</div>
+		&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+	</div>
+&lt;/div&gt;
+
+// js
+var wrapper = $('.wrapper');
+wrapper.find('.target').length; // 3
+</code></pre>
+					</section>
+					<section>
+							<p>.closest(selector)</p>
+							<p>取得他的位置往外找最快符合條件的那個</p>
+<pre><code>// html
+&lt;div class=&quot;wrapper&quot;&gt;
+	<div class="target">
+		&lt;div&gt;&lt;/div&gt;
+		<div>
+			&lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+		</div>
+		&lt;div&gt;&lt;/div&gt;
+	</div>
+&lt;/div&gt;
+
+// js
+var inner = $('.inner');
+inner.closest('.target') //
+</code></pre>
+					</section>
+					<section>
+							<p>.filter()</p>
+							<p>濾出符合條件的</p>
+<pre><code>// html
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var wrapper = $('.wrapper');
+var target = wrapper.children().filter('.target');
+target.length // 2
+</code></pre>
+					</section>
+					<section>
+							<p>.first()</p>
+							<p>取回的裡面第一個</p>
+<pre><code>// html
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var wrapper = $('.wrapper');
+var target = wrapper.children().first();
+target.attr('class') // target
+</code></pre>
+					</section>
+					<section>
+							<p>.last()</p>
+							<p>取回的裡面最後一個</p>
+<pre><code>// html
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var wrapper = $('.wrapper');
+var target = wrapper.children().last();
+target.attr('class') // target
+</code></pre>
+					</section>
+					<section>
+							<p>.eq(index)</p>
+							<p>取回 index 位置的 (跟 array 一樣的排序方式)</p>
+<pre><code>// html
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var wrapper = $('.wrapper');
+var target = wrapper.children().eq(1);
+target.attr('class') // target
+</code></pre>
 					</section>
 				</section>
 
 				<section data-transition="slide" data-background="#b5533c">
 					<section>
 						<h2>Manipulation</h2>
+						<p>取得狀態和設定狀態</p>
+					</section>
+					<section>
+						<p>.addClass</p>
+						<p>加一個 class 上去</p>
+						<pre><code>// html before
+&lt;div id=&quot;target&quot;&gt;&lt;/div&gt;
+
+// js
+var $target = $('#target');
+$target.addClass('a-new-class');
+
+// html after
+&lt;div id=&quot;target&quot; class=&quot;a-new-class&quot;&gt;&lt;/div&gt;
+</code></pre>
+					</section>
+					<section>
+						<p>.removeClass</p>
+						<p>移除一個 class</p>
+						<pre><code>// html before
+&lt;div id=&quot;target&quot; class=&quot;a-new-class&quot;&gt;&lt;/div&gt;
+
+// js
+var $target = $('#target');
+$target.removeClass('a-new-class');
+
+// html after
+&lt;div id=&quot;target&quot;&gt;&lt;/div&gt;
+
+</code></pre>
+					</section>
+					<section>
+						<p>.hasClass</p>
+						<p>判斷有沒有 class</p>
+						<pre><code>// html
+&lt;div id=&quot;target&quot; class=&quot;a-new-class&quot;&gt;&lt;/div&gt;
+
+// js
+var $target = $('#target');
+$target.hasClass('a-new-class') // true
+</code></pre>
+					</section>
+					<section>
+						<p>.append</p>
+						<p>添加到裡面一層的最後面</p>
+						<pre><code>// html before
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var $wrapper = $('#wrapper');
+$wrapper.append('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
+
+// html after
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+					</section>
+					<section>
+						<p>.prepend</p>
+						<p>添加到裡面一層的最前面</p>
+						<pre><code>// html before
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var $wrapper = $('#wrapper');
+$wrapper.prepend('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
+
+// html after
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+					</section>
+					<section>
+						<p>.after</p>
+						<p>添加到後面</p>
+						<pre><code>// html before
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var $wrapper = $('#wrapper');
+$wrapper.after('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
+
+// html after
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+</code></pre>
+					</section>
+					<section>
+						<p>.before</p>
+						<p>添加到前面</p>
+						<pre><code>// html before
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var $wrapper = $('#wrapper');
+$wrapper.before('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
+
+// html after
+&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+					</section>
+					<section>
+						<p>.text</p>
+						<p>取得裡面的字串</p>
+						<pre><code>// html
+&lt;div class=&quot;wrapper&quot;&gt;裡面的字&lt;/div&gt;
+
+// js
+var $wrapper = $('#wrapper');
+$wrapper.text() // '裡面的字'
+</code></pre>
+					</section>
+					<section>
+						<p>.text(text)</p>
+						<p>改寫裡面的字串</p>
+						<pre><code>// html before
+&lt;div class=&quot;wrapper&quot;&gt;裡面的字&lt;/div&gt;
+
+// js
+var $wrapper = $('#wrapper');
+$wrapper.text('想要別的字串');
+
+&lt;div class=&quot;wrapper&quot;&gt;想要別的字串&lt;/div&gt;
+</code></pre>
+					</section>
+					<section>
+						<p>.remove</p>
+						<p>移除</p>
+						<pre><code>// html before
+&lt;div&gt;
+	&lt;div class=&quot;wrapper&quot;&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;div&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+// js
+var $wrapper = $('#wrapper');
+$wrapper.before('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
+
+// html after
+&lt;div&gt;
+&lt;/div&gt;
+</code></pre>
+					</section>
+					<section>
+						<p>.attr</p>
+						<p>取得屬性</p>
+						<pre><code>// html before
+&lt;div id=&quot;target&quot; class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var $wrapper = $('#wrapper');
+$wrapper.attr('id') // target
+</code></pre>
+					</section>
+					<section>
+						<p>.attr(attrName, attrValue)</p>
+						<p>設定屬性</p>
+						<pre><code>// html before
+&lt;div id=&quot;target&quot; class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// js
+var $wrapper = $('#wrapper');
+$wrapper.attr('id', 'another'); //
+
+// html after
+&lt;div id=&quot;another&quot; class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
 					</section>
 				</section>
 
 				<section data-transition="slide" data-background="#4d7e65">
 					<section>
 						<h2>Events</h2>
+						<p>監聽事件的發生並去處理它</p>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<td>名稱</td>
+								<td>發生處理狀況</td>
+							</thead>
+							<tr>
+								<td>click</td>
+								<td>點擊的時候</td>
+							</tr>
+							<tr>
+								<td>dblclick</td>
+								<td>連點兩次的時候</td>
+							</tr>
+							<tr>
+								<td>focus</td>
+								<td>開始在輸入框輸入時候</td>
+							</tr>
+							<tr>
+								<td>blur</td>
+								<td>離開輸入框時候</td>
+							</tr>
+							<tr>
+								<td>change</td>
+								<td>輸入值改變的後</td>
+							</tr>
+							<tr>
+								<td>keydown</td>
+								<td>鍵盤按下去的時候</td>
+							</tr>
+							<tr>
+								<td>keyup</td>
+								<td>鍵盤按下去的鍵上來的時候</td>
+							</tr>
+							<tr>
+								<td>mouseenter</td>
+								<td>滑鼠進到元素裡面的時候</td>
+							</tr>
+							<tr>
+								<td>mouseleave</td>
+								<td>滑鼠移出元素的時候</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>重點 function 只有一個就是 .on(eventName, handler)</p>
+						<pre><code>// html
+&lt;button id=&quot;target-btn&quot;&gt;
+	是個按鈕
+&lt;/button&gt;
+
+// js
+var $btn = $('.btn');
+$btn.on('click', function() {
+	// ..做一些事，任何事，你希望按鈕按了要幹麻？
+	alert('你希望按鈕按了要幹麻？');
+});
+</code></pre>
+<button id="target-btn">是個按鈕</button>
 					</section>
 				</section>
 
@@ -131,6 +687,52 @@
 				<section data-transition="slide" data-background="#b5533c">
 					<section>
 						<h2>Effects</h2>
+					</section>
+					<section>
+						<p>一些動畫效果</p>
+						<p>這部分比較難所以只講一個範例</p>
+					</section>
+					<section>
+						<div id="effect" style="position: relative; left: 0; background-color: black; width: 200px; height: 200px;"></div>
+
+						<pre><code>// html
+&lt;div id=&quot;effect&quot; style=&quot;position: relative; left: 0; background-color: black; width: 200px; height: 200px;&quot;&gt;&lt;/div&gt;
+
+// js
+var $effect = $('#effect');
+var left = +($effect.css('left').split('px')[0]);
+$effect.animate({
+	left: '+=800'
+}, 2000);
+						</code></pre>
+					</section>
+					<section>
+						<p>剛剛那是個比較底層的 function 可以做比較多設定，<br>例如：效果時間、速度曲線、完成後要做的事情</p>
+						<p>純粹想快速做效果的話：.fadeIn(), .fadeOut(), .show(), .hide(), .slideDown(), .slideUp() 好用許多</p>
+						<a href="https://api.jquery.com/category/effects/">可以參考這裡</a>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<p>瀏覽器一打開畫面時，DOM 那時候即時還沒好</p>
+						<p class="fragment">所以寫 DOM 操作的程式時，必須等到 DOM ready</p>
+					</section>
+					<section>
+						<p>通常你應該把這類程式碼放到 document.ready</p>
+						<p>尤其是如果你的 js 載入時機比較早或是不固定時</p>
+
+						<pre><code>
+$(document).ready(function() {
+	// ..你的程式碼
+});
+						</code></pre>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h1 id="valentine">七夕情人節快樂</h1>
 					</section>
 				</section>
 
@@ -146,7 +748,10 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="lib/js/changeValentineColor.js"></script>
+		<script src="lib/js/effect.js"></script>
+		<script src="lib/js/btnAlert.js"></script>
 		<script>
 
 			// Full list of configuration options available at:
