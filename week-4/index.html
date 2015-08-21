@@ -379,9 +379,9 @@ target.attr('class') // target
 							<p>取回的裡面最後一個</p>
 <pre><code>// html
 &lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
 	&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;
-	&lt;div&gt;&lt;/div&gt;
-	&lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 // js
@@ -463,7 +463,7 @@ $target.hasClass('a-new-class') // true
 &lt;/div&gt;
 
 // js
-var $wrapper = $('#wrapper');
+var $wrapper = $('.wrapper');
 $wrapper.append('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
 
 // html after
@@ -484,7 +484,7 @@ $wrapper.append('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
 &lt;/div&gt;
 
 // js
-var $wrapper = $('#wrapper');
+var $wrapper = $('.wrapper');
 $wrapper.prepend('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
 
 // html after
@@ -505,7 +505,7 @@ $wrapper.prepend('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
 &lt;/div&gt;
 
 // js
-var $wrapper = $('#wrapper');
+var $wrapper = $('.wrapper');
 $wrapper.after('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
 
 // html after
@@ -526,7 +526,7 @@ $wrapper.after('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
 &lt;/div&gt;
 
 // js
-var $wrapper = $('#wrapper');
+var $wrapper = $('.wrapper');
 $wrapper.before('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
 
 // html after
@@ -544,7 +544,7 @@ $wrapper.before('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
 &lt;div class=&quot;wrapper&quot;&gt;裡面的字&lt;/div&gt;
 
 // js
-var $wrapper = $('#wrapper');
+var $wrapper = $('.wrapper');
 $wrapper.text() // '裡面的字'
 </code></pre>
 					</section>
@@ -555,7 +555,7 @@ $wrapper.text() // '裡面的字'
 &lt;div class=&quot;wrapper&quot;&gt;裡面的字&lt;/div&gt;
 
 // js
-var $wrapper = $('#wrapper');
+var $wrapper = $('.wrapper');
 $wrapper.text('想要別的字串');
 
 &lt;div class=&quot;wrapper&quot;&gt;想要別的字串&lt;/div&gt;
@@ -572,8 +572,8 @@ $wrapper.text('想要別的字串');
 	&lt;/div&gt;
 &lt;/div&gt;
 // js
-var $wrapper = $('#wrapper');
-$wrapper.before('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
+var $wrapper = $('.wrapper');
+$wrapper.remove();
 
 // html after
 &lt;div&gt;
@@ -590,7 +590,7 @@ $wrapper.before('&lt;div class=&quot;target&quot;&gt;&lt;/div&gt;');
 &lt;/div&gt;
 
 // js
-var $wrapper = $('#wrapper');
+var $wrapper = $('.wrapper');
 $wrapper.attr('id') // target
 </code></pre>
 					</section>
@@ -604,7 +604,7 @@ $wrapper.attr('id') // target
 &lt;/div&gt;
 
 // js
-var $wrapper = $('#wrapper');
+var $wrapper = $('.wrapper');
 $wrapper.attr('id', 'another'); //
 
 // html after
