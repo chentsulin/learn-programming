@@ -1,0 +1,17 @@
+.rectangle {
+	display: inline-block;
+	cursor: pointer;
+	width: 200px;
+	height: 200px;
+	background-color: #FFF;
+}
+
+.hover-target {
+	width: 400px;
+	height: 400px;
+	background-color: #FFF;
+}
+
+.hover-target.active, .rectangle.active  {
+	background-color: yellow;
+}

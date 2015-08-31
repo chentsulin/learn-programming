@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>challenge 2</title>
+
+		<meta name="description" content="challenge 2 - Learning Programming">
+		<meta name="author" content="C. T. Lin">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="css/app.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="#b5533c">
+					<h1>challenge</h1>
+					<p>
+						<small>jQuery</small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<h2>前置</h2>
+					<p>為了更接近實作，<br>今天只能用電腦上的 file sysyem 來寫，<br>避免使用 jsBin</p>
+					<p class="fragment">你可以開一些資料夾來放這些專案</p>
+					<p class="fragment">cd xxx && mkdir yyy && cd yyy</p>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h2>1. 選取、取值</h2>
+					</section>
+					<section>
+						<p>取得 post 的 title，然後把它 console.log 出來</p>
+						<p><a href="resources/post.html" target="_blank">html 檔</a></p>
+					</section>
+					<section>
+						<ul>
+							<li>使用適當的選擇器</li>
+							<li>使用 .val()</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>2. 動態顯示 input 的值</h2>
+					</section>
+					<section>
+						<div class="display"></div>
+						<input class="input" type="text" placeholder="這裡輸入">
+					</section>
+					<section>
+						<ul>
+							<li>用 placeholder 製作提示</li>
+							<li>使用 .on() 來 listen 事件發生</li>
+							<li>實際體驗 keydown, keypress, keyup 的差異</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h2>3. hover 效果</h2>
+					</section>
+					<section>
+						<div class="hover-target"></div>
+					</section>
+					<section>
+						<ul>
+							<li>使用 .on() 來 listen 事件發生</li>
+							<li>hover 在 js 是用 mouseenter, mouseleave 這兩個事件做出來的效果</li>
+							<li>在上述兩個事件發生時，addClass, removeClass</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>4. 可點選的正方形們</h2>
+					</section>
+					<section>
+						<div class="rectangle"></div>
+						<div class="rectangle"></div>
+						<div class="rectangle"></div>
+						<div class="rectangle"></div>
+						<div class="rectangle"></div>
+						<div class="rectangle"></div>
+						<div class="rectangle"></div>
+						<div class="rectangle"></div>
+					</section>
+					<section>
+						<ul>
+							<li>用 css cursor: pointer 做出可點選提示</li>
+							<li>被點擊的要變色，其他如果有變色要變回來</li>
+							<li>變色的被點也要變回來</li>
+							<li>同一時間只能有一個正方形變色</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h2>5. 新增與刪除清單</h2>
+					</section>
+					<section>
+						<p>嘗試製作 todo 清單</p>
+						<p>先嘗試新增刪除，更接近可嘗試編輯跟劃掉</p>
+						<p><a href="http://todomvc.com/examples/jquery/#/all">完成品</a></p>
+						<p><a href="resources/todo.html" target="_blank">html 檔</a></p>
+					</section>
+					<section>
+						<ul>
+							<li>on keypress <a href="http://stackoverflow.com/questions/302122/jquery-event-keypress-which-key-was-pressed">檢查 code 是不是 13</a> </li>
+							<li>新增時 append() 東西進到清單</li>
+							<li>hover (mouseenter, mouseleave) 時出現 x</li>
+							<li>x click 時 .remove()</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>6. 倒數計時</h2>
+					</section>
+					<section>
+						<p>顯示 'a 天 b 時 c 分 d 秒'</p>
+						<p><a href="http://www.reactnativeandroid.com/" target="_blank">範例</a></p>
+					</section>
+					<section>
+						<p>試著把計算時間的 function 跟更新時間的 function 給完全拆開</p>
+					</section>
+				</section>
+
+
+				<section data-transition="slide" data-background="#b5533c" style="text-align: left;">
+					<h1>THE END</h1>
+					<p>Thanks for listening</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+		<script src="js/display.js"></script>
+		<script src="js/hover.js"></script>
+		<script src="js/rectangle.js"></script>
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
