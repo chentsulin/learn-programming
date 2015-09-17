@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Week 5 - Learning Programming</title>
+
+		<meta name="description" content="Week 5 - Learning Programming">
+		<meta name="author" content="C. T. Lin">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="#b5533c">
+					<h1>Learning Programming</h1>
+					<h3>Week 5</h3>
+					<p>
+						<small>git/http/node/npm/crawler</small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>git</h2>
+						<p>版本管理工具</p>
+					</section>
+					<section>
+						<p class="fragment">有時候不小心把程式改壞了？</p>
+						<p class="fragment">有好幾個人需要一起開發？還可能會改到同一個檔案？</p>
+						<p class="fragment">我需要同時開發兩個功能還要解 bug 卻不能讓功能壞掉？</p>
+					</section>
+					<section>
+						<h2>你可能會開始嘗試的方案</h2>
+					</section>
+					<section>
+						<h2>寄 email 通知所有人我改了什麼</h2>
+						<p class="fragment">沒有 email 就不能參與</p>
+						<p class="fragment">說的跟做得不太一樣</p>
+						<p class="fragment">不知道怎麼跟自己的版本結合</p>
+					</section>
+					<section>
+						<h2>把 source code 寄 email 給所有人</h2>
+						<p class="fragment">一樣沒有 email 就不能參與</p>
+						<p class="fragment">不知道改了哪裡</p>
+						<p class="fragment">不知道怎麼跟自己的版本結合</p>
+					</section>
+					<section>
+						<h2>用 dropbox, google drive</h2>
+						<p class="fragment">自動同步很危險</p>
+						<p class="fragment">不知道改了哪裡</p>
+						<p class="fragment">不知道怎麼跟自己的版本結合</p>
+					</section>
+					<section>
+						<h2>所以需要有版本管理工具</h2>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<p>相信大家都已經看過 <a href="http://www.codeschool.com/courses/try-git">Try git</a> 而且有 Github 帳號了</p>
+					<p>另一個看起來也不錯的中文教學：<br><a href="http://backlogtool.com/git-guide/tw/">連猴子都能懂的 Git 入門指南</a></p>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<p><a href="http://www.slideshare.net/lkiral/git-34157836">Lucien Lee 的投影片</a>寫得太好了無法超越，建議看這個</p>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<h2>來總結一下</h2>
+				</section>
+
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>你現在要開一個新專案</h2>
+						<pre><code>git init</code></pre>
+						<p>就會開好新專案</p>
+					</section>
+					<section>
+						<h2>你現在要從網路上 (remote) 把專案複製下來</h2>
+						<pre><code>git clone [ssh or https path]</code></pre>
+						<p>就會把專案複製下來</p>
+					</section>
+					<section>
+						<h2>你要為專案設定新的遠端倉庫 (remote)</h2>
+						<pre><code>git remote add [remote_name] [ssh or https path]</code></pre>
+						<p>就可以開始跟 remote 互動</p>
+					</section>
+					<section>
+						<h2>你要為遠端倉庫 (remote) 修改路徑</h2>
+						<pre><code>git remote set-url [remote_name] [ssh or https path]</code></pre>
+						<p>就可以改 remote 的路徑</p>
+					</section>
+					<section>
+						<h2>你要看遠端倉庫 (remote) 有哪些</h2>
+						<pre><code>git remote -v</code></pre>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h2>要查看現在狀態</h2>
+						<pre><code>git status</code></pre>
+						<p>就可以看到跟 HEAD 的差距</p>
+					</section>
+					<section>
+						<h2>要查看現在跟 HEAD 的檔案修改內容</h2>
+						<pre><code>git diff HEAD</code></pre>
+						<p>就可以看到跟 HEAD 之間修改哪幾行</p>
+					</section>
+					<section>
+						<h2>要查看之前的 commit 有哪些</h2>
+						<pre><code>git log</code></pre>
+					</section>
+				</section>
+
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>要把檔案加到下一次 commit 的內容</h2>
+						<pre><code>git add [file_path]</code></pre>
+						<p>就把檔案加到 staging area</p>
+						<p>可以用 <code>git status</code> 看效果</p>
+					</section>
+					<section>
+						<h2>要把所有有改變的檔案加到下一次 commit 的內容</h2>
+						<pre><code>git add --all</code></pre>
+						<p>就把所有變更檔案加到 staging area 的狀態存檔</p>
+						<p>可以用 <code>git status</code> 看效果</p>
+					</section>
+					<section>
+						<h2>要把 staging area 的內容產生一個紀錄點</h2>
+						<pre><code>git commit -m ["my_commit message"]</code></pre>
+						<p>就可以產生一個以後可以跳回來的記錄點！</p>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h2>要把 commit 的內容同步到遠端 (remote)</h2>
+						<pre><code>git push [remote_name] [branch_name]</code></pre>
+						<p>預設的 remote_name 通常是 origin, 預設的 branch_name 通常是 master</p>
+					</section>
+					<section>
+						<h2>要把 commit 的內容從遠端 (remote) 同步到自己電腦 (local)</h2>
+						<pre><code>git pull [remote_name] [branch_name]</code></pre>
+						<p>預設的 remote_name 通常是 origin, 預設的 branch_name 通常是 master</p>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>要看現在有哪些分支</h2>
+						<pre><code>git branch</code></pre>
+					</section>
+					<section>
+						<h2>要開一個新的分支</h2>
+						<pre><code>git branch [branch_name]</code></pre>
+					</section>
+					<section>
+						<h2>要移動到另一個分支</h2>
+						<pre><code>git checkout [branch_name]</code></pre>
+					</section>
+					<section>
+						<h2>要把另一個分支的內容合併進來</h2>
+						<pre><code>git merge [branch_name]</code></pre>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<h2>現在來練習多人協作！</h2>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+						<h2>安裝 node js</h2>
+						<p><a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+					</section>
+					<section>
+						<p>安裝完可以確認自己 command line <br>有沒有 node, npm 這兩個指令</p>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c">
+					<section>
+						<h2>npm</h2>
+						<p>套件管理</p>
+					</section>
+					<section>
+						<p>在軟體領域，套件相依性被稱為死亡之谷，必須明確的知道自己使用的每個套件的版本</p>
+						<p>而套件管理也會幫你統一把套件下載回來</p>
+					</section>
+					<section>
+						<p>package.json</p>
+						<p>node 用這個檔案來管理這些</p>
+						<p>你可以用 npm init 產生一個</p>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65">
+					<section>
+<pre><code>
+mkdir crawler
+cd crawler
+npm init
+npm install --save superagent cheerio
+</code></pre>
+					</section>
+					<section>
+						<p>我們使用 <a href="https://visionmedia.github.io/superagent/">superagent</a> 跟 <a href="http://cheeriojs.github.io/cheerio/">cheerio</a> 來完成<br>爬<a href="http://udn.com/news/story/7266/1192216-%E6%90%96%E4%B8%8D%E5%81%9C%EF%BC%81%E8%8A%B1%E8%93%AE%E8%BF%91%E6%B5%B7-24%E5%B0%8F%E6%99%8231%E9%9C%87">搖不停！花蓮近海 24小時31震</a>新聞的目標</p>
+					</section>
+					<section>
+<pre><code>
+mkdir crawler
+cd crawler
+npm init
+npm install --save superagent cheerio
+</code></pre>
+					</section>
+					<section>
+<pre><code>
+var request = require('superagent');
+var cheerio = require('cheerio');
+
+request
+  .get('http://udn.com/news/story/7266/1192216-%E6%90%96%E4%B8%8D%E5%81%9C%EF%BC%81%E8%8A%B1%E8%93%AE%E8%BF%91%E6%B5%B7-24%E5%B0%8F%E6%99%8231%E9%9C%87')
+  .end(function(error, response) {
+    if (response.ok) {
+      var result = parse(response.text);
+        console.log(result);
+    } else {
+        console.log('Oh no! error ' + response.text);
+    }
+  });
+
+function parse(html) {
+  $ = cheerio.load(html);
+  var title = $('#story_art_title').text();
+  var paragraph = $('#story_body_content').find('p').text();
+  return {
+    title: title,
+    paragraph: paragraph
+  };
+}
+</code></pre>
+					</section>
+				</section>
+
+
+				<section data-transition="slide" data-background="#b5533c" style="text-align: left;">
+					<h1>THE END</h1>
+					<p>Thanks for listening</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="lib/js/changeValentineColor.js"></script>
+		<script src="lib/js/effect.js"></script>
+		<script src="lib/js/btnAlert.js"></script>
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
